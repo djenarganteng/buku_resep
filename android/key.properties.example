@@ -1,0 +1,4 @@
+storePassword=isi-password-keystore
+keyPassword=isi-password-key
+keyAlias=upload
+storeFile=C:\\path\\keystore\\rasa-nusantara-upload.jks

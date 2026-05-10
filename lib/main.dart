@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-//import 'profile page.dart';
-import 'home_page.dart';
-//import 'login_page.dart';
+import 'app_theme.dart';
+import 'bookmark_store.dart';
+import 'login_page.dart';
+import 'user_profile_store.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await loadStoredUserProfile();
+  await loadStoredBookmarks();
   runApp(const MyApp());
 }
 
@@ -15,9 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const HomePage(),
+      title: 'Rasa Nusantara',
+      theme: AppTheme.lightTheme,
+      home: const LoginPage(),
     );
   }
 }
